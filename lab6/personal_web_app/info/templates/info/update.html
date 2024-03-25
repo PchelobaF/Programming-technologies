@@ -1,0 +1,43 @@
+{% extends 'info/layout.html' %}
+
+{% block title %}
+Update receipt
+{% endblock %}
+
+{% block main_info_bl %}
+<br>
+  <h1 class="text-center">Edit entry №{{ datainfo.id }}</h1>
+  <div class="add_receipt_block">
+     <form class="text-center" method="post">
+       {% csrf_token %}
+       <div class="mb-3">
+         <label class="form-label">Receipt number</label>
+         {{ form.number }}
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Data</label>
+         {{ form.date }}
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Product name</label>
+         {{ form.product_name }}
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Product price</label>
+         {{ form.price }}
+       </div>
+       <span style="color: #FFFF00;">{{ error }}</span>
+       <a class="btn btn-outline-light" href="/info">
+         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16">
+           <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+           <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+         </svg>
+       </a>
+       <button type="submit" class="btn btn-outline-success">
+         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+           <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+         </svg>
+       </button>
+     </form>
+  </div>
+{% endblock %}

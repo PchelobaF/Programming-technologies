@@ -1,0 +1,32 @@
+{% extends 'info/layout.html' %}
+
+{% block title %}
+Create receipt Page
+{% endblock %}
+
+{% block main_info_bl %}
+  <h1 class="text-center">Adding data to the database</h1>
+  <div class="add_receipt_block">
+     <form class="text-center" method="post">
+       {% csrf_token %}
+       <div class="mb-3">
+         <label class="form-label">Receipt number</label>
+         {{ form.number }}
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Data</label>
+         {{ form.date }}
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Product name</label>
+         {{ form.product_name }}
+       </div>
+       <div class="mb-3">
+         <label class="form-label">Product price</label>
+         {{ form.price }}
+       </div>
+       <span style="color: #FFFF00;">{{ error }}</span>
+       <button type="submit" class="btn btn-outline-light">Add</button>
+     </form>
+  </div>
+{% endblock %}

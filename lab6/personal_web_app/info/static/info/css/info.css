@@ -1,0 +1,9 @@
+.receipt_block{
+    margin: auto;
+    margin-top: 3%;
+    width: 30%;
+    height: 100px;
+    background-color: #181818;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #0D0D0D ;
+}
